@@ -1,8 +1,15 @@
-# Usamos una imagen ligera de Python
+# 1. Imagen base con Python
 FROM python:3.9-slim
-# Directorio de trabajo dentro del contenedor
+
+# 2. Instalar Git dentro del contenedor para poder clonar
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+
+# 3. Directorio donde vivirá la app
 WORKDIR /app
-# Copiamos el script al contenedor
-COPY app.py .
-# 4. Comando para ejecutar la app al iniciar
+
+# 4. Clonar el repositorio vía HTTPS
+# Reemplaza la URL por la de tu repositorio si es diferente
+RUN git clone https://github.com/urielck/video-club.git .
+
+# 5. Comando para ejecutar la app
 CMD ["python", "app.py"]
