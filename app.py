@@ -1,0 +1,8 @@
+print("****************************************")
+print("* SISTEMA DE VIDEO-CLUB v1.0          *")
+print("* Ingeniería de Software - UACH       *")
+print("****************************************")
+print("¡Hola! Esta aplicación se está ejecutando")
+print("correctamente dentro de un contenedor.")
+print("Desarrollado por: Uriel Castro")
+print("****************************************")
